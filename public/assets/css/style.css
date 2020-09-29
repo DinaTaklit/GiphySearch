@@ -51,16 +51,23 @@ h6 {
     padding: 1.7rem 1rem;
     font-size: 1.2rem;
 }
+
 .search-wrapper button{
     padding: 0 1.2rem;
+    background-color: white;
+    color: var(--color-lightblue);
+}
+
+.search-wrapper button:hover{
     background-color: var(--color-lightblue);
+    color: var(--color-darkblue);
 }
 
 /**** Image Gallery ***/
 .images-wrapper{
     margin-top: 2rem;
-   
 }
+
 .images-wrapper .row{
     margin-top: 3rem;
     display: grid;
