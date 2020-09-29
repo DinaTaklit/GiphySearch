@@ -4,7 +4,6 @@ const ENTER = 13;
 
 // Search with each keyup => after each written letter
 document.querySelector('.search-giphy').addEventListener('keyup', function(){
-    console.log(this.value);
     const searchTerm = this.value.toLowerCase();
     searchGiphy(searchTerm);
 });
@@ -21,10 +20,8 @@ $('input[class=live-search-box]').keydown(function(e){
 
 // Search if the user click on the search button
 document.querySelector(".search-button").addEventListener('click', function() {
-    console.log("After a click here");
     const searchTerm = document.querySelector('.search-giphy').value.toLowerCase();
     searchGiphy(searchTerm);
-
 });
 
 
