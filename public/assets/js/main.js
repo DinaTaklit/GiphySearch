@@ -1,3 +1,38 @@
+/******** Live Search *******/
+
+const ENTER = 13;
+
+// Search with each keyup => after each written letter
+document.querySelector('.search-giphy').addEventListener('keyup', function(){
+    console.log(this.value);
+    const searchTerm = this.value.toLowerCase();
+    searchGiphy(searchTerm);
+});
+
+// Search once the user hit enter
+$('input[class=live-search-box]').keydown(function(e){
+  if(e.keyCode == ENTER){
+    e.preventDefault();
+    e.stopPropagation();
+    const searchTerm = this.value.toLowerCase();
+    searchGiphy(searchTerm);
+  }
+});
+
+// Search if the user click on the search button
+document.querySelector(".search-button").addEventListener('click', function() {
+    console.log("After a click here");
+    const searchTerm = document.querySelector('.search-giphy').value.toLowerCase();
+    searchGiphy(searchTerm);
+
+});
+
+
+/***************************/
+
+
+
+/************ API Call*********/
 // Card prototype to create Card object
 function Card(src){
     this.src = src;
@@ -28,7 +63,7 @@ function fillGiphyWrapper(response){
 
     // select the wrapper that will hold this images from the DOM
     var images_wrapper = document.querySelector('.images-wrapper .row') 
-
+    images_wrapper.innerHTML = ""; // init the wrapper after each seach
     images.forEach(image => {
         // choose one of the provided images
         let src = image.images.fixed_height.url;
@@ -56,4 +91,8 @@ function pushCardToDOM(cards_wrapper,card){
     }
 
 
-searchGiphy('cat');
+// searchGiphy('cat');
+
+
+
+
